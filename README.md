@@ -1,92 +1,93 @@
-# desafio-fullstack
+# Desafio Full Stack
+
+Abaixo você encontrará todos as informações necessárias para iniciar o seu teste.
+
+## Avisos antes de começar
+
+- Crie um repositório no seu GitHub ou Gitlab (preferencialmente Gitlab).
+- Faça seus commits no *seu repositório*.
+
+
+## Objetivo: Fórum de Discussão
+
+Você deverá desenvolver uma funcionalidade de "fórum de discussão" para a plataforma de LMS SaaS. O fórum de discussão permitirá que os usuários da plataforma interajam, compartilhem conhecimentos, tirem dúvidas e discutam sobre os cursos e conteúdos disponíveis.
+
+**Requisitos Técnicos:**
+
+1. Crie uma API RESTful utilizando Laravel e PHP para gerenciar as operações do fórum, como criar tópicos, postar mensagens, buscar tópicos por categoria, etc.
+
+2. Utilize o banco de dados MySQL para armazenar as informações relacionadas aos tópicos, mensagens, usuários, etc.
+
+3. Implemente a interface do usuário do fórum utilizando React e React Native, garantindo que seja responsiva e adequada para uso tanto em navegadores web quanto em dispositivos móveis.
+
+4. Integre a interface do usuário com a API RESTful, permitindo que os usuários visualizem e interajam com os tópicos e mensagens do fórum.
+
+5. Utilize o Git para controle de versão do código-fonte e faça commits periódicos para acompanhar o progresso do desenvolvimento.
+
+
+**Diferencial (opcional):**
+
+1. Docker: Crie um arquivo Dockerfile para cada componente da aplicação (backend e frontend) que especifique as dependências e comandos necessários para construir as imagens Docker.
+
+2. Docker: Utilize o Docker Compose para orquestrar os contêineres e definir a configuração de rede necessária.
+
+3. Docker: Garanta que a aplicação possa ser executada por meio de comandos Docker simples, como "docker-compose up" ou equivalentes.
 
 
 
-## Getting started
+**Entrega do Desafio:**
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+1. Crie um repositório no GitLab ou Github para o projeto e compartilhe o link com a equipe da G1learn.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+2. Desenvolva a funcionalidade seguindo as melhores práticas de desenvolvimento, considerando a escalabilidade, segurança e eficiência.
 
-## Add your files
+3. Documente o processo de configuração e execução do projeto, incluindo instruções claras para a equipe da G1learn reproduzir e testar a funcionalidade desenvolvida.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+4. Ao finalizar o desafio, envie um e-mail para a equipe da G1learn informando que o projeto está pronto para revisão.
 
+
+# Avaliação
+
+Apresente sua solução utilizando o framework que você desejar, justificando a escolha.
+Atente-se a cumprir a maioria dos requisitos, pois você pode cumprir-los parcialmente e durante a avaliação vamos bater um papo a respeito do que faltou.
+
+Teremos 2 partes da avaliação:
+
+A correção objetiva será realizada através da utilização de um script de correção automatizada. Você **pode** rodar na sua máquina local ou usar outra ferramenta:
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/infomaniacs-public/desafio-fullstack.git
-git branch -M main
-git push -uf origin main
-```
+docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd app text cleancode,codesize,controversial,design,naming,unusedcode
+```    
 
-## Integrate with your tools
+A correção qualitativa levará em conta os seguintes critérios:
 
-- [ ] [Set up project integrations](https://gitlab.com/infomaniacs-public/desafio-fullstack/-/settings/integrations)
+## O que será avaliado de acordo com o nível da vaga
+- Documentação com **desenho de arquitetura**
+- Código limpo e organizado (nomenclatura, etc)
+- Conhecimento de padrões (PSRs, design patterns, SOLID)
+- Modelagem de Dados
+- Manutenibilidade do Código
+- Tratamento de erros
+- Cuidado com itens de segurança
+- Carinho em desacoplar componentes (outras camadas, service, repository)
 
-## Collaborate with your team
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## O que será um Diferencial
+- Uso de Docker
+- Frontend com react ou reac native
+- Testes de [integração](https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing)
+- Testes [unitários](https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing)
+- Uso de Design Patterns
+- Documentação
+- Proposta de melhoria na arquitetura
 
-## Test and Deploy
 
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Materiais úteis
+- https://hub.packtpub.com/why-we-need-design-patterns/
+- https://refactoring.guru/
+- http://br.phptherightway.com/
+- https://www.php-fig.org/psr/psr-12/
+- https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing
+- https://github.com/exakat/php-static-analysis-tools
+- https://martinfowler.com/articles/microservices.htm
+- https://docs.guzzlephp.org/en/stable/request-options.html
+- https://www.devmedia.com.br/rest-tutorial/28912

@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -21,8 +24,12 @@
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
+        "classmap": [
+            "app/Policies/PostPolicy.php"
+        ],
         "psr-4": {
             "App\\": "app/",
+            "App\\Policies\\": "app/Policies/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

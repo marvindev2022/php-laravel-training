@@ -3,48 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use Laravel\Sanctum\HasApiTokens;
 
 class AuthController extends Controller
 {
-  public function login(Request $request)
-{
-    $data = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required'
-    ]);
+    use HasApiTokens;
 
-    $credentials = $request->only('email', 'password');
-
-    if (auth()->attempt($credentials)) {
-        $user = auth()->user();
-
-        return response()->json([
-            'message' => 'Login successful',
-            'user' => $user,
-            'token' => $user->createToken('authToken')->plainTextToken
-        ]);
-    } else {
-        return response()->json(['message' => 'Invalid credentials'], 401);
-    }
-}
-
-
-      public function signup(Request $request)
+    public function login(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+        $data = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
+        $credentials = $request->only('email', 'password');
+        if (auth()->attempt($credentials)) {
+            $user = auth()->user();
 
-        return response()->json(['message' => 'User registered successfully'], 201);
+            return response()->json([
+                'message' => 'Login successful',
+                'user' => $user,
+                'token' => $user->createToken('authToken')->plainTextToken
+            ]);
+        } else {
+            return response()->json(['message' => 'Invalid credentials'], 401);
+        }
     }
 }

@@ -25,7 +25,15 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        parent::boot();
+
+        Event::listen(AnotherEvent::class, function ($event) {
+            $user = $event->user;
+           
+        });
+
+
+        // Outros registros de eventos e lógica específica
     }
 
     /**

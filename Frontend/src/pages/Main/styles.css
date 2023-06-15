@@ -1,18 +1,42 @@
 .main {
-  position: fixed;
-  top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
   height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-
-section {
-  display: flex;
-  align-items: center;
-  max-width: 100vw;
-  min-height: 300px;
-  max-height: 100vh;
-  width: 100vw;
-  height: 100%;
+section{
+  display: flexbox;
+ width: 100%;
+ height: 100%;
+  border:2px solid red
 }
 
+.container-form-signin {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .container-mobile {
+    display: none;
+  }
+  .main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-desktop {
+    display: none;
+  }
+}

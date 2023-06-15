@@ -22,9 +22,14 @@ function SignIn(): JSX.Element {
       const response = await api.post("/login", { email, senha: password });
       const { usuarioLogado, token } = response.data;
 
-      sessionStorage.getItemsetItem("token", token);
-      sessionStorage.getItemsetItem("userId", usuarioLogado.id);
-      sessionStorage.getItemsetItem("userName", usuarioLogado.nome);
+      sessionStorage.getItemsetItem("token", token);   sessionStorage.setItem("token", token);
+      sessionStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: usuarioLogado.id,
+          name: usuarioLogado.nome,
+        })
+      );
       navigate("/main");
     } catch (error: unknown) {
       if (typeof error === "object" && error !== null) {
@@ -42,28 +47,7 @@ function SignIn(): JSX.Element {
   }
 
   return (
-    <div className="container-sign-in">
-
-      <div className="content-sign-in">
-        <div className="left">
-          <h1>
-            Conecte-se, <span>compartilhe</span> e aprenda!
-          </h1>
-          <h3>
-            Aproveite a funcionalidade de fórum de discussão da nossa plataforma
-            de LMS SaaS. Troque conhecimentos, tire suas dúvidas e participe de
-            discussões relevantes sobre os cursos e conteúdos disponíveis.
-            Juntos, vamos explorar novas ideias e enriquecer nossa jornada de
-            aprendizado.
-          </h3>
-          <button
-            className="btn-purple btn-big"
-            onClick={() => navigate("/sign-up")}
-          >
-            Cadastre-se
-          </button>
-        </div>
-        <div className="right">
+        <div className="container-form-signin">
           <form onSubmit={handleSubmit}>
             <h2>Login</h2>
             <div className="container-inputs">
@@ -87,8 +71,6 @@ function SignIn(): JSX.Element {
             <button className="btn-purple btn-big">Entrar</button>
           </form>
         </div>
-      </div>
-    </div>
   );
 }
 

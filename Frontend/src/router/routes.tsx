@@ -3,16 +3,17 @@ import Main from "../pages/Main/main";
 import  Home from "../pages/Home/Home";
 import  Signin from "../pages/Signin/Signin";
 import  Signup from "../pages/Signup/Signup";
-
+import "./../index.css"
 function MainRouter() {
   return (
-    <Routes>
-      <Route path="/" element={<Signin />} />
-      <Route path="/main" element={<Main />} />
-      <Route path="/sign-in" element={<Signin />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/sign-up" element={<Signup />} />
-    </Routes>
+    <main className="main-router">
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/sign-in" element={<Signin />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/sign-up" element={<Signup />} />
+      </Routes>
+    </main>
   );
 }
 

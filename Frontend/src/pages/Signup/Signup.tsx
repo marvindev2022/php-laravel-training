@@ -61,10 +61,9 @@ function SignUp() {
   }
 
   return (
-    <div className="container-sign-up">
-      {/* <img src={Logo} alt="Logo" className="logo" /> */}
+     
 
-      <div className="content-sign-up">
+      <div className="content-form-signup">
         <form onSubmit={handleSubmit}>
           <h2>Cadastre-se</h2>
 
@@ -110,10 +109,9 @@ function SignUp() {
 
           <button className="btn-purple btn-big">Cadastrar</button>
 
-          <Link to="/">Já tem cadastro? Clique aqui!</Link>
+  
         </form>
       </div>
-    </div>
   );
 }
 

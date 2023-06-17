@@ -1,0 +1,14 @@
+tables:
+  - users:
+      id: increments
+      name: string
+      email: string|unique
+      password: string
+      created_at: timestamps
+      updated_at: timestamps
+  - messages:
+      id: increments
+      topic_id: foreignId:topics
+      content: text
+      created_at: timestamps
+      updated_at: timestamps
